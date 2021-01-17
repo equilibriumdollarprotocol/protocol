@@ -21,8 +21,8 @@ require('dotenv').config();
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const privateKey = process.env.TSD_PRIVATE_KEY;
 const infuraId = process.env.TSD_INFURA_ID;
-const etherscanKey = "79MEFXEYGQEZPAZ6EYR6CTYXJ343WY1XT8";
-const mnemonic = "minor ordinary kind half about ahead rib gold guilt still output cushion";
+const etherscanKey = "";
+const mnemonic = "";
 
 module.exports = {
   networks: {
