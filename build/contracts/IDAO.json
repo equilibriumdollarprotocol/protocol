@@ -1,0 +1,252 @@
+{
+  "contractName": "IDAO",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "epoch",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"epoch\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/D/10012021/fix-project/equilibrium-protocol/contracts/oracle/IDAO.sol\":\"IDAO\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/10012021/fix-project/equilibrium-protocol/contracts/oracle/IDAO.sol\":{\"keccak256\":\"0xb55503103b964e997849c4a8a831292e36c8c29e5c052c441a42ad9c662775b3\",\"urls\":[\"bzz-raw://61fb9666c58ab172be694904b88eb0ad32a66e48481008837940d5c70ba4deca\",\"dweb:/ipfs/QmTgnNKVwXFd81ZsDUS6RqiuV99YjZmXCWBTS8niVYBhX2\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "/*\r\n    Copyright 2021 Equilibrium Dollar Protocol, based on the works of the Empty Set Squad and Dynamic Dollar Devs\r\n\r\n    Licensed under the Apache License, Version 2.0 (the \"License\");\r\n    you may not use this file except in compliance with the License.\r\n    You may obtain a copy of the License at\r\n\r\n    http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n    Unless required by applicable law or agreed to in writing, software\r\n    distributed under the License is distributed on an \"AS IS\" BASIS,\r\n    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n    See the License for the specific language governing permissions and\r\n    limitations under the License.\r\n*/\r\n\r\npragma solidity ^0.5.17;\r\n\r\ncontract IDAO {\r\n    function epoch() external view returns (uint256);\r\n}",
+  "sourcePath": "D:\\10012021\\fix-project\\equilibrium-protocol\\contracts\\oracle\\IDAO.sol",
+  "ast": {
+    "absolutePath": "/D/10012021/fix-project/equilibrium-protocol/contracts/oracle/IDAO.sol",
+    "exportedSymbols": {
+      "IDAO": [
+        8848
+      ]
+    },
+    "id": 8849,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 8842,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "694:24:41"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 8848,
+        "linearizedBaseContracts": [
+          8848
+        ],
+        "name": "IDAO",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 8847,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "epoch",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8843,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "757:2:41"
+            },
+            "returnParameters": {
+              "id": 8846,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8845,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8847,
+                  "src": "783:7:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8844,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "783:7:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "782:9:41"
+            },
+            "scope": 8848,
+            "src": "743:49:41",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 8849,
+        "src": "722:73:41"
+      }
+    ],
+    "src": "694:101:41"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/D/10012021/fix-project/equilibrium-protocol/contracts/oracle/IDAO.sol",
+      "exportedSymbols": {
+        "IDAO": [
+          8848
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.5",
+            ".17"
+          ]
+        },
+        "id": 8842,
+        "name": "PragmaDirective",
+        "src": "694:24:41"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            8848
+          ],
+          "name": "IDAO",
+          "scope": 8849
+        },
+        "children": [
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "epoch",
+              "scope": 8848,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 8843,
+                "name": "ParameterList",
+                "src": "757:2:41"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 8847,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 8844,
+                        "name": "ElementaryTypeName",
+                        "src": "783:7:41"
+                      }
+                    ],
+                    "id": 8845,
+                    "name": "VariableDeclaration",
+                    "src": "783:7:41"
+                  }
+                ],
+                "id": 8846,
+                "name": "ParameterList",
+                "src": "782:9:41"
+              }
+            ],
+            "id": 8847,
+            "name": "FunctionDefinition",
+            "src": "743:49:41"
+          }
+        ],
+        "id": 8848,
+        "name": "ContractDefinition",
+        "src": "722:73:41"
+      }
+    ],
+    "id": 8849,
+    "name": "SourceUnit",
+    "src": "694:101:41"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.3",
+  "updatedAt": "2021-01-16T11:55:51.121Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

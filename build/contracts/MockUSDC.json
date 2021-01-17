@@ -1,0 +1,747 @@
+{
+  "contractName": "MockUSDC",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_account",
+          "type": "address"
+        }
+      ],
+      "name": "isBlacklisted",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "blacklisted",
+          "type": "bool"
+        }
+      ],
+      "name": "setIsBlacklisted",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_account\",\"type\":\"address\"}],\"name\":\"isBlacklisted\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bool\",\"name\":\"blacklisted\",\"type\":\"bool\"}],\"name\":\"setIsBlacklisted\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/D/10012021/fix-project/equilibrium-protocol/contracts/mock/MockUSDC.sol\":\"MockUSDC\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/10012021/fix-project/equilibrium-protocol/contracts/mock/MockUSDC.sol\":{\"keccak256\":\"0x7d26a5bd9f287f1b879ab4ae2abe7cc91e6f0aa29c480e177783ca37cab592bb\",\"urls\":[\"bzz-raw://e3d26582738f1489b3ef027c1823960ba4e6a426fb582f3e97f42aec0f5a63a5\",\"dweb:/ipfs/QmbGPREyrqq7ZS5vV8WRRJ35PpQWso6cTiogNJ7A7YbfHc\"]},\"/D/10012021/fix-project/equilibrium-protocol/contracts/oracle/IUSDC.sol\":{\"keccak256\":\"0xfd7b61479fafea2a5888756d1dd7c54f54fdb0b8a6f9d8beede3558b34287ca8\",\"urls\":[\"bzz-raw://e78f469a7833e810db659a41068ba2398ad40cc22461e74ebe82417850abd9dc\",\"dweb:/ipfs/QmYuMxenvHzvc19pYoyGUL74tj4zciqzXLuN8wiF3GURJo\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610192806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80638387d0bf1461003b578063fe575a8714610050575b600080fd5b61004e6100493660046100d8565b610079565b005b61006361005e3660046100b2565b61008c565b6040516100709190610105565b60405180910390f35b6000805460ff1916911515919091179055565b5060005460ff1690565b80356100a18161012f565b92915050565b80356100a181610146565b6000602082840312156100c457600080fd5b60006100d08484610096565b949350505050565b6000602082840312156100ea57600080fd5b60006100d084846100a7565b6100ff8161011e565b82525050565b602081016100a182846100f6565b60006100a182610123565b151590565b6001600160a01b031690565b61013881610113565b811461014357600080fd5b50565b6101388161011e56fea365627a7a72315820e9330d6f7085e950e954172599baade0ce1d27ee305c2de81c75a3585a38584b6c6578706572696d656e74616cf564736f6c63430005110040",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c80638387d0bf1461003b578063fe575a8714610050575b600080fd5b61004e6100493660046100d8565b610079565b005b61006361005e3660046100b2565b61008c565b6040516100709190610105565b60405180910390f35b6000805460ff1916911515919091179055565b5060005460ff1690565b80356100a18161012f565b92915050565b80356100a181610146565b6000602082840312156100c457600080fd5b60006100d08484610096565b949350505050565b6000602082840312156100ea57600080fd5b60006100d084846100a7565b6100ff8161011e565b82525050565b602081016100a182846100f6565b60006100a182610123565b151590565b6001600160a01b031690565b61013881610113565b811461014357600080fd5b50565b6101388161011e56fea365627a7a72315820e9330d6f7085e950e954172599baade0ce1d27ee305c2de81c75a3585a38584b6c6578706572696d656e74616cf564736f6c63430005110040",
+  "sourceMap": "790:285:36:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;790:285:36;;;;;;;",
+  "deployedSourceMap": "790:285:36:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;790:285:36;;;;;;;;;;;;;;;;;;;;;;;;974:98;;;;;;;;;:::i;:::-;;858:108;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;974:98;1038:12;:26;;-1:-1:-1;;1038:26:36;;;;;;;;;;974:98::o;858:108::-;-1:-1:-1;922:4:36;946:12;;;;858:108::o;5:130:-1:-;72:20;;97:33;72:20;97:33;;;57:78;;;;;142:124;206:20;;231:30;206:20;231:30;;273:241;;377:2;365:9;356:7;352:23;348:32;345:2;;;393:1;390;383:12;345:2;428:1;445:53;490:7;470:9;445:53;;;435:63;339:175;-1:-1;;;;339:175;521:235;;622:2;610:9;601:7;597:23;593:32;590:2;;;638:1;635;628:12;590:2;673:1;690:50;732:7;712:9;690:50;;763:104;840:21;855:5;840:21;;;835:3;828:34;822:45;;;874:201;986:2;971:18;;1000:65;975:9;1038:6;1000:65;;1082:91;;1144:24;1162:5;1144:24;;1180:85;1246:13;1239:21;;1222:43;1272:121;-1:-1;;;;;1334:54;;1317:76;1400:117;1469:24;1487:5;1469:24;;;1462:5;1459:35;1449:2;;1508:1;1505;1498:12;1449:2;1443:74;;1524:111;1590:21;1605:5;1590:21;",
+  "source": "/*\r\n    Copyright 2021 Equilibrium Dollar Protocol, based on the works of the Empty Set Squad and Dynamic Dollar Devs\r\n\r\n    Licensed under the Apache License, Version 2.0 (the \"License\");\r\n    you may not use this file except in compliance with the License.\r\n    You may obtain a copy of the License at\r\n\r\n    http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n    Unless required by applicable law or agreed to in writing, software\r\n    distributed under the License is distributed on an \"AS IS\" BASIS,\r\n    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n    See the License for the specific language governing permissions and\r\n    limitations under the License.\r\n*/\r\n\r\npragma solidity ^0.5.17;\r\npragma experimental ABIEncoderV2;\r\n\r\nimport \"../oracle/IUSDC.sol\";\r\n\r\ncontract MockUSDC is IUSDC {\r\n    bool private _blacklisted;\r\n\r\n    function isBlacklisted(address _account) external view returns (bool) {\r\n        return _blacklisted;\r\n    }\r\n\r\n    function setIsBlacklisted(bool blacklisted) external {\r\n        _blacklisted = blacklisted;\r\n    }\r\n}\r\n",
+  "sourcePath": "D:/10012021/fix-project/equilibrium-protocol/contracts/mock/MockUSDC.sol",
+  "ast": {
+    "absolutePath": "/D/10012021/fix-project/equilibrium-protocol/contracts/mock/MockUSDC.sol",
+    "exportedSymbols": {
+      "MockUSDC": [
+        7669
+      ]
+    },
+    "id": 7670,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7642,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "694:24:36"
+      },
+      {
+        "id": 7643,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "720:33:36"
+      },
+      {
+        "absolutePath": "/D/10012021/fix-project/equilibrium-protocol/contracts/oracle/IUSDC.sol",
+        "file": "../oracle/IUSDC.sol",
+        "id": 7644,
+        "nodeType": "ImportDirective",
+        "scope": 7670,
+        "sourceUnit": 8879,
+        "src": "757:29:36",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 7645,
+              "name": "IUSDC",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 8878,
+              "src": "811:5:36",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IUSDC_$8878",
+                "typeString": "contract IUSDC"
+              }
+            },
+            "id": 7646,
+            "nodeType": "InheritanceSpecifier",
+            "src": "811:5:36"
+          }
+        ],
+        "contractDependencies": [
+          8878
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 7669,
+        "linearizedBaseContracts": [
+          7669,
+          8878
+        ],
+        "name": "MockUSDC",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 7648,
+            "name": "_blacklisted",
+            "nodeType": "VariableDeclaration",
+            "scope": 7669,
+            "src": "824:25:36",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 7647,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "824:4:36",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 7657,
+              "nodeType": "Block",
+              "src": "928:38:36",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 7655,
+                    "name": "_blacklisted",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 7648,
+                    "src": "946:12:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 7654,
+                  "id": 7656,
+                  "nodeType": "Return",
+                  "src": "939:19:36"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 7658,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isBlacklisted",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7651,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7650,
+                  "name": "_account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7658,
+                  "src": "881:16:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7649,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "881:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "880:18:36"
+            },
+            "returnParameters": {
+              "id": 7654,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7653,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7658,
+                  "src": "922:4:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7652,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "922:4:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "921:6:36"
+            },
+            "scope": 7669,
+            "src": "858:108:36",
+            "stateMutability": "view",
+            "superFunction": 8877,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 7667,
+              "nodeType": "Block",
+              "src": "1027:45:36",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 7665,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 7663,
+                      "name": "_blacklisted",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7648,
+                      "src": "1038:12:36",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 7664,
+                      "name": "blacklisted",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7660,
+                      "src": "1053:11:36",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "1038:26:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 7666,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1038:26:36"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 7668,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setIsBlacklisted",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7661,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7660,
+                  "name": "blacklisted",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7668,
+                  "src": "1000:16:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7659,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1000:4:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "999:18:36"
+            },
+            "returnParameters": {
+              "id": 7662,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1027:0:36"
+            },
+            "scope": 7669,
+            "src": "974:98:36",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 7670,
+        "src": "790:285:36"
+      }
+    ],
+    "src": "694:383:36"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/D/10012021/fix-project/equilibrium-protocol/contracts/mock/MockUSDC.sol",
+      "exportedSymbols": {
+        "MockUSDC": [
+          7669
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.5",
+            ".17"
+          ]
+        },
+        "id": 7642,
+        "name": "PragmaDirective",
+        "src": "694:24:36"
+      },
+      {
+        "attributes": {
+          "literals": [
+            "experimental",
+            "ABIEncoderV2"
+          ]
+        },
+        "id": 7643,
+        "name": "PragmaDirective",
+        "src": "720:33:36"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 8879,
+          "absolutePath": "/D/10012021/fix-project/equilibrium-protocol/contracts/oracle/IUSDC.sol",
+          "file": "../oracle/IUSDC.sol",
+          "scope": 7670,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 7644,
+        "name": "ImportDirective",
+        "src": "757:29:36"
+      },
+      {
+        "attributes": {
+          "contractDependencies": [
+            8878
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            7669,
+            8878
+          ],
+          "name": "MockUSDC",
+          "scope": 7670
+        },
+        "children": [
+          {
+            "attributes": {
+              "arguments": null
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "IUSDC",
+                  "referencedDeclaration": 8878,
+                  "type": "contract IUSDC"
+                },
+                "id": 7645,
+                "name": "UserDefinedTypeName",
+                "src": "811:5:36"
+              }
+            ],
+            "id": 7646,
+            "name": "InheritanceSpecifier",
+            "src": "811:5:36"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "_blacklisted",
+              "scope": 7669,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "bool",
+              "value": null,
+              "visibility": "private"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "bool",
+                  "type": "bool"
+                },
+                "id": 7647,
+                "name": "ElementaryTypeName",
+                "src": "824:4:36"
+              }
+            ],
+            "id": 7648,
+            "name": "VariableDeclaration",
+            "src": "824:25:36"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "isBlacklisted",
+              "scope": 7669,
+              "stateMutability": "view",
+              "superFunction": 8877,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_account",
+                      "scope": 7658,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 7649,
+                        "name": "ElementaryTypeName",
+                        "src": "881:7:36"
+                      }
+                    ],
+                    "id": 7650,
+                    "name": "VariableDeclaration",
+                    "src": "881:16:36"
+                  }
+                ],
+                "id": 7651,
+                "name": "ParameterList",
+                "src": "880:18:36"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 7658,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 7652,
+                        "name": "ElementaryTypeName",
+                        "src": "922:4:36"
+                      }
+                    ],
+                    "id": 7653,
+                    "name": "VariableDeclaration",
+                    "src": "922:4:36"
+                  }
+                ],
+                "id": 7654,
+                "name": "ParameterList",
+                "src": "921:6:36"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 7654
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 7648,
+                          "type": "bool",
+                          "value": "_blacklisted"
+                        },
+                        "id": 7655,
+                        "name": "Identifier",
+                        "src": "946:12:36"
+                      }
+                    ],
+                    "id": 7656,
+                    "name": "Return",
+                    "src": "939:19:36"
+                  }
+                ],
+                "id": 7657,
+                "name": "Block",
+                "src": "928:38:36"
+              }
+            ],
+            "id": 7658,
+            "name": "FunctionDefinition",
+            "src": "858:108:36"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "setIsBlacklisted",
+              "scope": 7669,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "blacklisted",
+                      "scope": 7668,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 7659,
+                        "name": "ElementaryTypeName",
+                        "src": "1000:4:36"
+                      }
+                    ],
+                    "id": 7660,
+                    "name": "VariableDeclaration",
+                    "src": "1000:16:36"
+                  }
+                ],
+                "id": 7661,
+                "name": "ParameterList",
+                "src": "999:18:36"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7662,
+                "name": "ParameterList",
+                "src": "1027:0:36"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7648,
+                              "type": "bool",
+                              "value": "_blacklisted"
+                            },
+                            "id": 7663,
+                            "name": "Identifier",
+                            "src": "1038:12:36"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7660,
+                              "type": "bool",
+                              "value": "blacklisted"
+                            },
+                            "id": 7664,
+                            "name": "Identifier",
+                            "src": "1053:11:36"
+                          }
+                        ],
+                        "id": 7665,
+                        "name": "Assignment",
+                        "src": "1038:26:36"
+                      }
+                    ],
+                    "id": 7666,
+                    "name": "ExpressionStatement",
+                    "src": "1038:26:36"
+                  }
+                ],
+                "id": 7667,
+                "name": "Block",
+                "src": "1027:45:36"
+              }
+            ],
+            "id": 7668,
+            "name": "FunctionDefinition",
+            "src": "974:98:36"
+          }
+        ],
+        "id": 7669,
+        "name": "ContractDefinition",
+        "src": "790:285:36"
+      }
+    ],
+    "id": 7670,
+    "name": "SourceUnit",
+    "src": "694:383:36"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.3",
+  "updatedAt": "2021-01-16T10:09:32.075Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

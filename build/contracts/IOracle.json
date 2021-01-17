@@ -1,0 +1,583 @@
+{
+  "contractName": "IOracle",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "setup",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "capture",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Decimal.D256",
+          "name": "",
+          "type": "tuple"
+        },
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "pair",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[],\"name\":\"capture\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"internalType\":\"struct Decimal.D256\",\"name\":\"\",\"type\":\"tuple\"},{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"pair\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"setup\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/D/10012021/fix-project/equilibrium-protocol/contracts/oracle/IOracle.sol\":\"IOracle\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/10012021/fix-project/equilibrium-protocol/contracts/external/Decimal.sol\":{\"keccak256\":\"0xc499b043b7437f4fc4f2031fa85d63bb26ab30bcacbecde53615df5703cdfd45\",\"urls\":[\"bzz-raw://7019346794765e7393ec755eb993a75e4e97bfad9cddd3dd7f4d42fca6b0bdd1\",\"dweb:/ipfs/QmYwfp5xSctBsV82q1oSuxdGhbpqhXRTwKJyFhvzkWnJZR\"]},\"/D/10012021/fix-project/equilibrium-protocol/contracts/oracle/IOracle.sol\":{\"keccak256\":\"0xf921c393815f84ca336ad3b1eaf03aebf12d1753623a35a5d217c3480375c5ba\",\"urls\":[\"bzz-raw://6dfb1a601f001b8582484e8bbffc8b93611d87bd194c5d74cac978a23d4b0204\",\"dweb:/ipfs/QmU6BmbYhFE2oSVjrsne6CiYooe4nPdpZ4SzXhgFHvYeWD\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x640b6dee7a4b830bdfd52b5031a07fc2b12209f5b2e29e5d364a7d37f69d8076\",\"urls\":[\"bzz-raw://31113152e1ddb78fe7a4197f247591ca894e93f916867beb708d8e747b6cc74f\",\"dweb:/ipfs/QmbZaJyXdpsYGykVhHH9qpVGQg9DGCxE2QufbCUy3daTgq\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "/*\r\n    Copyright 2021 Equilibrium Dollar Protocol, based on the works of the Empty Set Squad and Dynamic Dollar Devs\r\n\r\n    Licensed under the Apache License, Version 2.0 (the \"License\");\r\n    you may not use this file except in compliance with the License.\r\n    You may obtain a copy of the License at\r\n\r\n    http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n    Unless required by applicable law or agreed to in writing, software\r\n    distributed under the License is distributed on an \"AS IS\" BASIS,\r\n    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n    See the License for the specific language governing permissions and\r\n    limitations under the License.\r\n*/\r\n\r\npragma solidity ^0.5.17;\r\npragma experimental ABIEncoderV2;\r\n\r\nimport \"../external/Decimal.sol\";\r\n\r\ncontract IOracle {\r\n    function setup() public;\r\n    function capture() public returns (Decimal.D256 memory, bool);\r\n    function pair() external view returns (address);\r\n}",
+  "sourcePath": "D:\\10012021\\fix-project\\equilibrium-protocol\\contracts\\oracle\\IOracle.sol",
+  "ast": {
+    "absolutePath": "/D/10012021/fix-project/equilibrium-protocol/contracts/oracle/IOracle.sol",
+    "exportedSymbols": {
+      "IOracle": [
+        8868
+      ]
+    },
+    "id": 8869,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 8850,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "694:24:42"
+      },
+      {
+        "id": 8851,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "720:33:42"
+      },
+      {
+        "absolutePath": "/D/10012021/fix-project/equilibrium-protocol/contracts/external/Decimal.sol",
+        "file": "../external/Decimal.sol",
+        "id": 8852,
+        "nodeType": "ImportDirective",
+        "scope": 8869,
+        "sourceUnit": 5168,
+        "src": "757:33:42",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 8868,
+        "linearizedBaseContracts": [
+          8868
+        ],
+        "name": "IOracle",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 8855,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setup",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8853,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "832:2:42"
+            },
+            "returnParameters": {
+              "id": 8854,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "841:0:42"
+            },
+            "scope": 8868,
+            "src": "818:24:42",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 8862,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "capture",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8856,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "864:2:42"
+            },
+            "returnParameters": {
+              "id": 8861,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8858,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8862,
+                  "src": "883:19:42",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_D256_$4705_memory_ptr",
+                    "typeString": "struct Decimal.D256"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 8857,
+                    "name": "Decimal.D256",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 4705,
+                    "src": "883:12:42",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_D256_$4705_storage_ptr",
+                      "typeString": "struct Decimal.D256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8860,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8862,
+                  "src": "904:4:42",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 8859,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "904:4:42",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "882:27:42"
+            },
+            "scope": 8868,
+            "src": "848:62:42",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 8867,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "pair",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8863,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "929:2:42"
+            },
+            "returnParameters": {
+              "id": 8866,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8865,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8867,
+                  "src": "955:7:42",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 8864,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "955:7:42",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "954:9:42"
+            },
+            "scope": 8868,
+            "src": "916:48:42",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 8869,
+        "src": "794:173:42"
+      }
+    ],
+    "src": "694:273:42"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/D/10012021/fix-project/equilibrium-protocol/contracts/oracle/IOracle.sol",
+      "exportedSymbols": {
+        "IOracle": [
+          8868
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.5",
+            ".17"
+          ]
+        },
+        "id": 8850,
+        "name": "PragmaDirective",
+        "src": "694:24:42"
+      },
+      {
+        "attributes": {
+          "literals": [
+            "experimental",
+            "ABIEncoderV2"
+          ]
+        },
+        "id": 8851,
+        "name": "PragmaDirective",
+        "src": "720:33:42"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 5168,
+          "absolutePath": "/D/10012021/fix-project/equilibrium-protocol/contracts/external/Decimal.sol",
+          "file": "../external/Decimal.sol",
+          "scope": 8869,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 8852,
+        "name": "ImportDirective",
+        "src": "757:33:42"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            8868
+          ],
+          "name": "IOracle",
+          "scope": 8869
+        },
+        "children": [
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "setup",
+              "scope": 8868,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 8853,
+                "name": "ParameterList",
+                "src": "832:2:42"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 8854,
+                "name": "ParameterList",
+                "src": "841:0:42"
+              }
+            ],
+            "id": 8855,
+            "name": "FunctionDefinition",
+            "src": "818:24:42"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "capture",
+              "scope": 8868,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 8856,
+                "name": "ParameterList",
+                "src": "864:2:42"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 8862,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "struct Decimal.D256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "Decimal.D256",
+                          "referencedDeclaration": 4705,
+                          "type": "struct Decimal.D256"
+                        },
+                        "id": 8857,
+                        "name": "UserDefinedTypeName",
+                        "src": "883:12:42"
+                      }
+                    ],
+                    "id": 8858,
+                    "name": "VariableDeclaration",
+                    "src": "883:19:42"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 8862,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 8859,
+                        "name": "ElementaryTypeName",
+                        "src": "904:4:42"
+                      }
+                    ],
+                    "id": 8860,
+                    "name": "VariableDeclaration",
+                    "src": "904:4:42"
+                  }
+                ],
+                "id": 8861,
+                "name": "ParameterList",
+                "src": "882:27:42"
+              }
+            ],
+            "id": 8862,
+            "name": "FunctionDefinition",
+            "src": "848:62:42"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "pair",
+              "scope": 8868,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 8863,
+                "name": "ParameterList",
+                "src": "929:2:42"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 8867,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 8864,
+                        "name": "ElementaryTypeName",
+                        "src": "955:7:42"
+                      }
+                    ],
+                    "id": 8865,
+                    "name": "VariableDeclaration",
+                    "src": "955:7:42"
+                  }
+                ],
+                "id": 8866,
+                "name": "ParameterList",
+                "src": "954:9:42"
+              }
+            ],
+            "id": 8867,
+            "name": "FunctionDefinition",
+            "src": "916:48:42"
+          }
+        ],
+        "id": 8868,
+        "name": "ContractDefinition",
+        "src": "794:173:42"
+      }
+    ],
+    "id": 8869,
+    "name": "SourceUnit",
+    "src": "694:273:42"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.3",
+  "updatedAt": "2021-01-16T11:55:51.122Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

@@ -1,0 +1,1728 @@
+{
+  "contractName": "MockSettableOracle",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "numerator",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "denominator",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "valid",
+          "type": "bool"
+        }
+      ],
+      "name": "set",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "setup",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "capture",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Decimal.D256",
+          "name": "",
+          "type": "tuple"
+        },
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "pair",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[],\"name\":\"capture\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"internalType\":\"struct Decimal.D256\",\"name\":\"\",\"type\":\"tuple\"},{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"pair\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"numerator\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"denominator\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"valid\",\"type\":\"bool\"}],\"name\":\"set\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"setup\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/D/10012021/fix-project/equilibrium-protocol/contracts/mock/MockSettableOracle.sol\":\"MockSettableOracle\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/10012021/fix-project/equilibrium-protocol/contracts/external/Decimal.sol\":{\"keccak256\":\"0xc499b043b7437f4fc4f2031fa85d63bb26ab30bcacbecde53615df5703cdfd45\",\"urls\":[\"bzz-raw://7019346794765e7393ec755eb993a75e4e97bfad9cddd3dd7f4d42fca6b0bdd1\",\"dweb:/ipfs/QmYwfp5xSctBsV82q1oSuxdGhbpqhXRTwKJyFhvzkWnJZR\"]},\"/D/10012021/fix-project/equilibrium-protocol/contracts/mock/MockSettableOracle.sol\":{\"keccak256\":\"0x326e804f092ed15ae7c5ea86c09d0d43e25167b3749bccbb9cfaa27b4ca9182a\",\"urls\":[\"bzz-raw://fcde7f43f3a59b9fbd2b77dae9d7d74e376507c9c62732e9e8cb3362e697cd5c\",\"dweb:/ipfs/QmeUF6JfX5fNHW1xKts7bCorJcCj6HLMnK22a5W6yGvDj5\"]},\"/D/10012021/fix-project/equilibrium-protocol/contracts/oracle/IOracle.sol\":{\"keccak256\":\"0xf921c393815f84ca336ad3b1eaf03aebf12d1753623a35a5d217c3480375c5ba\",\"urls\":[\"bzz-raw://6dfb1a601f001b8582484e8bbffc8b93611d87bd194c5d74cac978a23d4b0204\",\"dweb:/ipfs/QmU6BmbYhFE2oSVjrsne6CiYooe4nPdpZ4SzXhgFHvYeWD\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x640b6dee7a4b830bdfd52b5031a07fc2b12209f5b2e29e5d364a7d37f69d8076\",\"urls\":[\"bzz-raw://31113152e1ddb78fe7a4197f247591ca894e93f916867beb708d8e747b6cc74f\",\"dweb:/ipfs/QmbZaJyXdpsYGykVhHH9qpVGQg9DGCxE2QufbCUy3daTgq\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061048b806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c806364482f7914610051578063a8aa1b3114610066578063ba0bba4014610084578063d4a3e9d71461008c575b600080fd5b61006461005f366004610242565b6100a2565b005b61006e6100c5565b60405161007b919061036c565b60405180910390f35b6100646100e8565b6100946100ea565b60405161007b9291906103ab565b6100ac838361010e565b516000556001805460ff19169115159190911790555050565b600060405162461bcd60e51b81526004016100df9061038b565b60405180910390fd5b565b6100f2610219565b50600154604080516020810190915260005481529060ff169091565b610116610219565b604051806020016040528061013485670de0b6b3a76400008661013f565b905290505b92915050565b600061016182610155868663ffffffff61016b16565b9063ffffffff6101a516565b90505b9392505050565b60008261017a57506000610139565b8282028284828161018757fe5b04146101645760405162461bcd60e51b81526004016100df9061039b565b600061016483836040518060400160405280601a81526020017f536166654d6174683a206469766973696f6e206279207a65726f000000000000815250600081836102035760405162461bcd60e51b81526004016100df919061037a565b50600083858161020f57fe5b0495945050505050565b6040518060200160405280600081525090565b803561013981610428565b80356101398161043f565b60008060006060848603121561025757600080fd5b60006102638686610237565b935050602061027486828701610237565b92505060406102858682870161022c565b9150509250925092565b610298816103d3565b82525050565b610298816103de565b60006102b2826103c6565b6102bc81856103ca565b93506102cc8185602086016103f2565b6102d58161041e565b9093019392505050565b60006102ec600e836103ca565b6d53686f756c64206e6f742075736560901b815260200192915050565b60006103166021836103ca565b7f536166654d6174683a206d756c7469706c69636174696f6e206f766572666c6f8152607760f81b602082015260400192915050565b8051602083019061035d8482610363565b50505050565b610298816103ef565b60208101610139828461028f565b6020808252810161016481846102a7565b60208082528101610139816102df565b6020808252810161013981610309565b604081016103b9828561034c565b610164602083018461029e565b5190565b90815260200190565b6000610139826103e3565b151590565b6001600160a01b031690565b90565b60005b8381101561040d5781810151838201526020016103f5565b8381111561035d5750506000910152565b601f01601f191690565b610431816103de565b811461043c57600080fd5b50565b610431816103ef56fea365627a7a72315820ed8cdb6ece5d09e69c5810f8a1104d38dc63345f995e65d430e0f740cda8bdf26c6578706572696d656e74616cf564736f6c63430005110040",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c806364482f7914610051578063a8aa1b3114610066578063ba0bba4014610084578063d4a3e9d71461008c575b600080fd5b61006461005f366004610242565b6100a2565b005b61006e6100c5565b60405161007b919061036c565b60405180910390f35b6100646100e8565b6100946100ea565b60405161007b9291906103ab565b6100ac838361010e565b516000556001805460ff19169115159190911790555050565b600060405162461bcd60e51b81526004016100df9061038b565b60405180910390fd5b565b6100f2610219565b50600154604080516020810190915260005481529060ff169091565b610116610219565b604051806020016040528061013485670de0b6b3a76400008661013f565b905290505b92915050565b600061016182610155868663ffffffff61016b16565b9063ffffffff6101a516565b90505b9392505050565b60008261017a57506000610139565b8282028284828161018757fe5b04146101645760405162461bcd60e51b81526004016100df9061039b565b600061016483836040518060400160405280601a81526020017f536166654d6174683a206469766973696f6e206279207a65726f000000000000815250600081836102035760405162461bcd60e51b81526004016100df919061037a565b50600083858161020f57fe5b0495945050505050565b6040518060200160405280600081525090565b803561013981610428565b80356101398161043f565b60008060006060848603121561025757600080fd5b60006102638686610237565b935050602061027486828701610237565b92505060406102858682870161022c565b9150509250925092565b610298816103d3565b82525050565b610298816103de565b60006102b2826103c6565b6102bc81856103ca565b93506102cc8185602086016103f2565b6102d58161041e565b9093019392505050565b60006102ec600e836103ca565b6d53686f756c64206e6f742075736560901b815260200192915050565b60006103166021836103ca565b7f536166654d6174683a206d756c7469706c69636174696f6e206f766572666c6f8152607760f81b602082015260400192915050565b8051602083019061035d8482610363565b50505050565b610298816103ef565b60208101610139828461028f565b6020808252810161016481846102a7565b60208082528101610139816102df565b6020808252810161013981610309565b604081016103b9828561034c565b610164602083018461029e565b5190565b90815260200190565b6000610139826103e3565b151590565b6001600160a01b031690565b90565b60005b8381101561040d5781810151838201526020016103f5565b8381111561035d5750506000910152565b601f01601f191690565b610431816103de565b811461043c57600080fd5b50565b610431816103ef56fea365627a7a72315820ed8cdb6ece5d09e69c5810f8a1104d38dc63345f995e65d430e0f740cda8bdf26c6578706572696d656e74616cf564736f6c63430005110040",
+  "sourceMap": "827:577:33:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;827:577:33;;;;;;;",
+  "deployedSourceMap": "827:577:33:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;827:577:33;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1005:164;;;;;;;;;:::i;:::-;;1324:77;;;:::i;:::-;;;;;;;;;;;;;;;;1177:27;;;:::i;1212:104::-;;;:::i;:::-;;;;;;;;;1005:164;1099:37;1113:9;1124:11;1099:13;:37::i;:::-;1090:46;:6;:46;1147:6;:14;;-1:-1:-1;;1147:14:33;;;;;;;;;;-1:-1:-1;;1005:164:33:o;1324:77::-;1363:7;1374:24;;-1:-1:-1;;;1374:24:33;;;;;;;;;;;;;;;;1177:27;:::o;1212:104::-;1247:19;;:::i;:::-;-1:-1:-1;1301:6:33;;1285:23;;;;;;;;;1268:4;1285:23;;;;1301:6;;1212:104;;:::o;1690:183:16:-;1790:11;;:::i;:::-;1826:39;;;;;;;;1840:22;1851:1;1115:6;1860:1;1840:10;:22::i;:::-;1826:39;;1819:46;-1:-1:-1;1690:183:16;;;;;:::o;5391:225::-;5538:7;5570:38;5596:11;5570:21;:6;5581:9;5570:21;:10;:21;:::i;:::-;:25;:38;:25;:38;:::i;:::-;5563:45;;5391:225;;;;;;:::o;2159:459:56:-;2217:7;2458:6;2454:45;;-1:-1:-1;2487:1:56;2480:8;;2454:45;2521:5;;;2525:1;2521;:5;:1;2544:5;;;;;:10;2536:56;;;;-1:-1:-1;;;2536:56:56;;;;;;;;3073:130;3131:7;3157:39;3161:1;3164;3157:39;;;;;;;;;;;;;;;;;3804:7;3904:12;3897:5;3889:28;;;;-1:-1:-1;;;3889:28:56;;;;;;;;;;;3927:9;3943:1;3939;:5;;;;;;;3718:338;-1:-1:-1;;;;;3718:338:56:o;827:577:33:-;;;;;;;;;;;;;;:::o;5:124:-1:-;69:20;;94:30;69:20;94:30;;136:130;203:20;;228:33;203:20;228:33;;273:485;;;;408:2;396:9;387:7;383:23;379:32;376:2;;;424:1;421;414:12;376:2;459:1;476:53;521:7;501:9;476:53;;;466:63;;438:97;566:2;584:53;629:7;620:6;609:9;605:22;584:53;;;574:63;;545:98;674:2;692:50;734:7;725:6;714:9;710:22;692:50;;;682:60;;653:95;370:388;;;;;;765:113;848:24;866:5;848:24;;;843:3;836:37;830:48;;;885:104;962:21;977:5;962:21;;996:347;;1108:39;1141:5;1108:39;;;1159:71;1223:6;1218:3;1159:71;;;1152:78;;1235:52;1280:6;1275:3;1268:4;1261:5;1257:16;1235:52;;;1308:29;1330:6;1308:29;;;1299:39;;;;1088:255;-1:-1;;;1088:255;1351:314;;1511:67;1575:2;1570:3;1511:67;;;-1:-1;;;1591:37;;1656:2;1647:12;;1497:168;-1:-1;;1497:168;1674:370;;1834:67;1898:2;1893:3;1834:67;;;1934:34;1914:55;;-1:-1;;;1998:2;1989:12;;1982:25;2035:2;2026:12;;1820:224;-1:-1;;1820:224;2101:317;2305:23;;2238:4;2229:14;;;2334:63;2233:3;2305:23;2334:63;;;2258:145;2211:207;;;;2425:103;2498:24;2516:5;2498:24;;2535:213;2653:2;2638:18;;2667:71;2642:9;2711:6;2667:71;;2755:301;2893:2;2907:47;;;2878:18;;2968:78;2878:18;3032:6;2968:78;;3063:407;3254:2;3268:47;;;3239:18;;3329:131;3239:18;3329:131;;3477:407;3668:2;3682:47;;;3653:18;;3743:131;3653:18;3743:131;;3891:400;4075:2;4060:18;;4089:115;4064:9;4177:6;4089:115;;;4215:66;4277:2;4266:9;4262:18;4253:6;4215:66;;4298:122;4386:12;;4357:63;4428:163;4531:19;;;4580:4;4571:14;;4524:67;4599:91;;4661:24;4679:5;4661:24;;4697:85;4763:13;4756:21;;4739:43;4789:121;-1:-1;;;;;4851:54;;4834:76;4917:72;4979:5;4962:27;4997:268;5062:1;5069:101;5083:6;5080:1;5077:13;5069:101;;;5150:11;;;5144:18;5131:11;;;5124:39;5105:2;5098:10;5069:101;;;5185:6;5182:1;5179:13;5176:2;;;-1:-1;;5250:1;5232:16;;5225:27;5046:219;5273:97;5361:2;5341:14;-1:-1;;5337:28;;5321:49;5378:111;5444:21;5459:5;5444:21;;;5437:5;5434:32;5424:2;;5480:1;5477;5470:12;5424:2;5418:71;;5496:117;5565:24;5583:5;5565:24;",
+  "source": "/*\r\n    Copyright 2021 Equilibrium Dollar Protocol, based on the works of the Empty Set Squad and Dynamic Dollar Devs\r\n\r\n    Licensed under the Apache License, Version 2.0 (the \"License\");\r\n    you may not use this file except in compliance with the License.\r\n    You may obtain a copy of the License at\r\n\r\n    http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n    Unless required by applicable law or agreed to in writing, software\r\n    distributed under the License is distributed on an \"AS IS\" BASIS,\r\n    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n    See the License for the specific language governing permissions and\r\n    limitations under the License.\r\n*/\r\n\r\npragma solidity ^0.5.17;\r\npragma experimental ABIEncoderV2;\r\n\r\nimport \"../external/Decimal.sol\";\r\nimport \"../oracle/IOracle.sol\";\r\n\r\ncontract MockSettableOracle is IOracle {\r\n    Decimal.D256 internal _price;\r\n    bool internal _valid;\r\n    uint256 internal _lastReserve;\r\n    uint256 internal _reserve;\r\n\r\n    function set(uint256 numerator, uint256 denominator, bool valid) external {\r\n        _price = Decimal.ratio(numerator, denominator);\r\n        _valid = valid;\r\n    }\r\n\r\n    function setup() public { }\r\n\r\n    function capture() public returns (Decimal.D256 memory, bool) {\r\n        return (_price, _valid);\r\n    }\r\n\r\n    function pair() external view returns (address) { revert(\"Should not use\"); }\r\n}\r\n",
+  "sourcePath": "D:/10012021/fix-project/equilibrium-protocol/contracts/mock/MockSettableOracle.sol",
+  "ast": {
+    "absolutePath": "/D/10012021/fix-project/equilibrium-protocol/contracts/mock/MockSettableOracle.sol",
+    "exportedSymbols": {
+      "MockSettableOracle": [
+        7130
+      ]
+    },
+    "id": 7131,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7068,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "694:24:33"
+      },
+      {
+        "id": 7069,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "720:33:33"
+      },
+      {
+        "absolutePath": "/D/10012021/fix-project/equilibrium-protocol/contracts/external/Decimal.sol",
+        "file": "../external/Decimal.sol",
+        "id": 7070,
+        "nodeType": "ImportDirective",
+        "scope": 7131,
+        "sourceUnit": 5168,
+        "src": "757:33:33",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/D/10012021/fix-project/equilibrium-protocol/contracts/oracle/IOracle.sol",
+        "file": "../oracle/IOracle.sol",
+        "id": 7071,
+        "nodeType": "ImportDirective",
+        "scope": 7131,
+        "sourceUnit": 8869,
+        "src": "792:31:33",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 7072,
+              "name": "IOracle",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 8868,
+              "src": "858:7:33",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IOracle_$8868",
+                "typeString": "contract IOracle"
+              }
+            },
+            "id": 7073,
+            "nodeType": "InheritanceSpecifier",
+            "src": "858:7:33"
+          }
+        ],
+        "contractDependencies": [
+          8868
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 7130,
+        "linearizedBaseContracts": [
+          7130,
+          8868
+        ],
+        "name": "MockSettableOracle",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 7075,
+            "name": "_price",
+            "nodeType": "VariableDeclaration",
+            "scope": 7130,
+            "src": "873:28:33",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_D256_$4705_storage",
+              "typeString": "struct Decimal.D256"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 7074,
+              "name": "Decimal.D256",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4705,
+              "src": "873:12:33",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_D256_$4705_storage_ptr",
+                "typeString": "struct Decimal.D256"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 7077,
+            "name": "_valid",
+            "nodeType": "VariableDeclaration",
+            "scope": 7130,
+            "src": "908:20:33",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 7076,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "908:4:33",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 7079,
+            "name": "_lastReserve",
+            "nodeType": "VariableDeclaration",
+            "scope": 7130,
+            "src": "935:29:33",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 7078,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "935:7:33",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 7081,
+            "name": "_reserve",
+            "nodeType": "VariableDeclaration",
+            "scope": 7130,
+            "src": "971:25:33",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 7080,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "971:7:33",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 7102,
+              "nodeType": "Block",
+              "src": "1079:90:33",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 7096,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 7090,
+                      "name": "_price",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7075,
+                      "src": "1090:6:33",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_D256_$4705_storage",
+                        "typeString": "struct Decimal.D256 storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 7093,
+                          "name": "numerator",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 7083,
+                          "src": "1113:9:33",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 7094,
+                          "name": "denominator",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 7085,
+                          "src": "1124:11:33",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 7091,
+                          "name": "Decimal",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5167,
+                          "src": "1099:7:33",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_Decimal_$5167_$",
+                            "typeString": "type(library Decimal)"
+                          }
+                        },
+                        "id": 7092,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "ratio",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 4758,
+                        "src": "1099:13:33",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_struct$_D256_$4705_memory_ptr_$",
+                          "typeString": "function (uint256,uint256) pure returns (struct Decimal.D256 memory)"
+                        }
+                      },
+                      "id": 7095,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1099:37:33",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_D256_$4705_memory_ptr",
+                        "typeString": "struct Decimal.D256 memory"
+                      }
+                    },
+                    "src": "1090:46:33",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_D256_$4705_storage",
+                      "typeString": "struct Decimal.D256 storage ref"
+                    }
+                  },
+                  "id": 7097,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1090:46:33"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 7100,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 7098,
+                      "name": "_valid",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7077,
+                      "src": "1147:6:33",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 7099,
+                      "name": "valid",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7087,
+                      "src": "1156:5:33",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "1147:14:33",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 7101,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1147:14:33"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 7103,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "set",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7088,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7083,
+                  "name": "numerator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7103,
+                  "src": "1018:17:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7082,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1018:7:33",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7085,
+                  "name": "denominator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7103,
+                  "src": "1037:19:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7084,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1037:7:33",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7087,
+                  "name": "valid",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7103,
+                  "src": "1058:10:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7086,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1058:4:33",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1017:52:33"
+            },
+            "returnParameters": {
+              "id": 7089,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1079:0:33"
+            },
+            "scope": 7130,
+            "src": "1005:164:33",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 7106,
+              "nodeType": "Block",
+              "src": "1201:3:33",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 7107,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setup",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7104,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1191:2:33"
+            },
+            "returnParameters": {
+              "id": 7105,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1201:0:33"
+            },
+            "scope": 7130,
+            "src": "1177:27:33",
+            "stateMutability": "nonpayable",
+            "superFunction": 8855,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 7118,
+              "nodeType": "Block",
+              "src": "1274:42:33",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "components": [
+                      {
+                        "argumentTypes": null,
+                        "id": 7114,
+                        "name": "_price",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7075,
+                        "src": "1293:6:33",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_D256_$4705_storage",
+                          "typeString": "struct Decimal.D256 storage ref"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 7115,
+                        "name": "_valid",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7077,
+                        "src": "1301:6:33",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "id": 7116,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "1292:16:33",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_struct$_D256_$4705_storage_$_t_bool_$",
+                      "typeString": "tuple(struct Decimal.D256 storage ref,bool)"
+                    }
+                  },
+                  "functionReturnParameters": 7113,
+                  "id": 7117,
+                  "nodeType": "Return",
+                  "src": "1285:23:33"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 7119,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "capture",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7108,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1228:2:33"
+            },
+            "returnParameters": {
+              "id": 7113,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7110,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7119,
+                  "src": "1247:19:33",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_D256_$4705_memory_ptr",
+                    "typeString": "struct Decimal.D256"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 7109,
+                    "name": "Decimal.D256",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 4705,
+                    "src": "1247:12:33",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_D256_$4705_storage_ptr",
+                      "typeString": "struct Decimal.D256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7112,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7119,
+                  "src": "1268:4:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7111,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1268:4:33",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1246:27:33"
+            },
+            "scope": 7130,
+            "src": "1212:104:33",
+            "stateMutability": "nonpayable",
+            "superFunction": 8862,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 7128,
+              "nodeType": "Block",
+              "src": "1372:29:33",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "53686f756c64206e6f7420757365",
+                        "id": 7125,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1381:16:33",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_562e1db963abe78ea05112d9818dd22e06da9cf982ff3d9bfd86c0d5b3cead1f",
+                          "typeString": "literal_string \"Should not use\""
+                        },
+                        "value": "Should not use"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_562e1db963abe78ea05112d9818dd22e06da9cf982ff3d9bfd86c0d5b3cead1f",
+                          "typeString": "literal_string \"Should not use\""
+                        }
+                      ],
+                      "id": 7124,
+                      "name": "revert",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        12716,
+                        12717
+                      ],
+                      "referencedDeclaration": 12717,
+                      "src": "1374:6:33",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory) pure"
+                      }
+                    },
+                    "id": 7126,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1374:24:33",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 7127,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1374:24:33"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 7129,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "pair",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7120,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1337:2:33"
+            },
+            "returnParameters": {
+              "id": 7123,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7122,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7129,
+                  "src": "1363:7:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7121,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1363:7:33",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1362:9:33"
+            },
+            "scope": 7130,
+            "src": "1324:77:33",
+            "stateMutability": "view",
+            "superFunction": 8867,
+            "visibility": "external"
+          }
+        ],
+        "scope": 7131,
+        "src": "827:577:33"
+      }
+    ],
+    "src": "694:712:33"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/D/10012021/fix-project/equilibrium-protocol/contracts/mock/MockSettableOracle.sol",
+      "exportedSymbols": {
+        "MockSettableOracle": [
+          7130
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.5",
+            ".17"
+          ]
+        },
+        "id": 7068,
+        "name": "PragmaDirective",
+        "src": "694:24:33"
+      },
+      {
+        "attributes": {
+          "literals": [
+            "experimental",
+            "ABIEncoderV2"
+          ]
+        },
+        "id": 7069,
+        "name": "PragmaDirective",
+        "src": "720:33:33"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 5168,
+          "absolutePath": "/D/10012021/fix-project/equilibrium-protocol/contracts/external/Decimal.sol",
+          "file": "../external/Decimal.sol",
+          "scope": 7131,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 7070,
+        "name": "ImportDirective",
+        "src": "757:33:33"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 8869,
+          "absolutePath": "/D/10012021/fix-project/equilibrium-protocol/contracts/oracle/IOracle.sol",
+          "file": "../oracle/IOracle.sol",
+          "scope": 7131,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 7071,
+        "name": "ImportDirective",
+        "src": "792:31:33"
+      },
+      {
+        "attributes": {
+          "contractDependencies": [
+            8868
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            7130,
+            8868
+          ],
+          "name": "MockSettableOracle",
+          "scope": 7131
+        },
+        "children": [
+          {
+            "attributes": {
+              "arguments": null
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "IOracle",
+                  "referencedDeclaration": 8868,
+                  "type": "contract IOracle"
+                },
+                "id": 7072,
+                "name": "UserDefinedTypeName",
+                "src": "858:7:33"
+              }
+            ],
+            "id": 7073,
+            "name": "InheritanceSpecifier",
+            "src": "858:7:33"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "_price",
+              "scope": 7130,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "struct Decimal.D256",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "Decimal.D256",
+                  "referencedDeclaration": 4705,
+                  "type": "struct Decimal.D256"
+                },
+                "id": 7074,
+                "name": "UserDefinedTypeName",
+                "src": "873:12:33"
+              }
+            ],
+            "id": 7075,
+            "name": "VariableDeclaration",
+            "src": "873:28:33"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "_valid",
+              "scope": 7130,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "bool",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "bool",
+                  "type": "bool"
+                },
+                "id": 7076,
+                "name": "ElementaryTypeName",
+                "src": "908:4:33"
+              }
+            ],
+            "id": 7077,
+            "name": "VariableDeclaration",
+            "src": "908:20:33"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "_lastReserve",
+              "scope": 7130,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint256",
+                  "type": "uint256"
+                },
+                "id": 7078,
+                "name": "ElementaryTypeName",
+                "src": "935:7:33"
+              }
+            ],
+            "id": 7079,
+            "name": "VariableDeclaration",
+            "src": "935:29:33"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "_reserve",
+              "scope": 7130,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint256",
+                  "type": "uint256"
+                },
+                "id": 7080,
+                "name": "ElementaryTypeName",
+                "src": "971:7:33"
+              }
+            ],
+            "id": 7081,
+            "name": "VariableDeclaration",
+            "src": "971:25:33"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "set",
+              "scope": 7130,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "numerator",
+                      "scope": 7103,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7082,
+                        "name": "ElementaryTypeName",
+                        "src": "1018:7:33"
+                      }
+                    ],
+                    "id": 7083,
+                    "name": "VariableDeclaration",
+                    "src": "1018:17:33"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "denominator",
+                      "scope": 7103,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7084,
+                        "name": "ElementaryTypeName",
+                        "src": "1037:7:33"
+                      }
+                    ],
+                    "id": 7085,
+                    "name": "VariableDeclaration",
+                    "src": "1037:19:33"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "valid",
+                      "scope": 7103,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 7086,
+                        "name": "ElementaryTypeName",
+                        "src": "1058:4:33"
+                      }
+                    ],
+                    "id": 7087,
+                    "name": "VariableDeclaration",
+                    "src": "1058:10:33"
+                  }
+                ],
+                "id": 7088,
+                "name": "ParameterList",
+                "src": "1017:52:33"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7089,
+                "name": "ParameterList",
+                "src": "1079:0:33"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "struct Decimal.D256 storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7075,
+                              "type": "struct Decimal.D256 storage ref",
+                              "value": "_price"
+                            },
+                            "id": 7090,
+                            "name": "Identifier",
+                            "src": "1090:6:33"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "struct Decimal.D256 memory",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "ratio",
+                                  "referencedDeclaration": 4758,
+                                  "type": "function (uint256,uint256) pure returns (struct Decimal.D256 memory)"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 5167,
+                                      "type": "type(library Decimal)",
+                                      "value": "Decimal"
+                                    },
+                                    "id": 7091,
+                                    "name": "Identifier",
+                                    "src": "1099:7:33"
+                                  }
+                                ],
+                                "id": 7092,
+                                "name": "MemberAccess",
+                                "src": "1099:13:33"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 7083,
+                                  "type": "uint256",
+                                  "value": "numerator"
+                                },
+                                "id": 7093,
+                                "name": "Identifier",
+                                "src": "1113:9:33"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 7085,
+                                  "type": "uint256",
+                                  "value": "denominator"
+                                },
+                                "id": 7094,
+                                "name": "Identifier",
+                                "src": "1124:11:33"
+                              }
+                            ],
+                            "id": 7095,
+                            "name": "FunctionCall",
+                            "src": "1099:37:33"
+                          }
+                        ],
+                        "id": 7096,
+                        "name": "Assignment",
+                        "src": "1090:46:33"
+                      }
+                    ],
+                    "id": 7097,
+                    "name": "ExpressionStatement",
+                    "src": "1090:46:33"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7077,
+                              "type": "bool",
+                              "value": "_valid"
+                            },
+                            "id": 7098,
+                            "name": "Identifier",
+                            "src": "1147:6:33"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7087,
+                              "type": "bool",
+                              "value": "valid"
+                            },
+                            "id": 7099,
+                            "name": "Identifier",
+                            "src": "1156:5:33"
+                          }
+                        ],
+                        "id": 7100,
+                        "name": "Assignment",
+                        "src": "1147:14:33"
+                      }
+                    ],
+                    "id": 7101,
+                    "name": "ExpressionStatement",
+                    "src": "1147:14:33"
+                  }
+                ],
+                "id": 7102,
+                "name": "Block",
+                "src": "1079:90:33"
+              }
+            ],
+            "id": 7103,
+            "name": "FunctionDefinition",
+            "src": "1005:164:33"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "setup",
+              "scope": 7130,
+              "stateMutability": "nonpayable",
+              "superFunction": 8855,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7104,
+                "name": "ParameterList",
+                "src": "1191:2:33"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7105,
+                "name": "ParameterList",
+                "src": "1201:0:33"
+              },
+              {
+                "attributes": {
+                  "statements": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7106,
+                "name": "Block",
+                "src": "1201:3:33"
+              }
+            ],
+            "id": 7107,
+            "name": "FunctionDefinition",
+            "src": "1177:27:33"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "capture",
+              "scope": 7130,
+              "stateMutability": "nonpayable",
+              "superFunction": 8862,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7108,
+                "name": "ParameterList",
+                "src": "1228:2:33"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 7119,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "struct Decimal.D256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "Decimal.D256",
+                          "referencedDeclaration": 4705,
+                          "type": "struct Decimal.D256"
+                        },
+                        "id": 7109,
+                        "name": "UserDefinedTypeName",
+                        "src": "1247:12:33"
+                      }
+                    ],
+                    "id": 7110,
+                    "name": "VariableDeclaration",
+                    "src": "1247:19:33"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 7119,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 7111,
+                        "name": "ElementaryTypeName",
+                        "src": "1268:4:33"
+                      }
+                    ],
+                    "id": 7112,
+                    "name": "VariableDeclaration",
+                    "src": "1268:4:33"
+                  }
+                ],
+                "id": 7113,
+                "name": "ParameterList",
+                "src": "1246:27:33"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 7113
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isInlineArray": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "type": "tuple(struct Decimal.D256 storage ref,bool)"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7075,
+                              "type": "struct Decimal.D256 storage ref",
+                              "value": "_price"
+                            },
+                            "id": 7114,
+                            "name": "Identifier",
+                            "src": "1293:6:33"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7077,
+                              "type": "bool",
+                              "value": "_valid"
+                            },
+                            "id": 7115,
+                            "name": "Identifier",
+                            "src": "1301:6:33"
+                          }
+                        ],
+                        "id": 7116,
+                        "name": "TupleExpression",
+                        "src": "1292:16:33"
+                      }
+                    ],
+                    "id": 7117,
+                    "name": "Return",
+                    "src": "1285:23:33"
+                  }
+                ],
+                "id": 7118,
+                "name": "Block",
+                "src": "1274:42:33"
+              }
+            ],
+            "id": 7119,
+            "name": "FunctionDefinition",
+            "src": "1212:104:33"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "pair",
+              "scope": 7130,
+              "stateMutability": "view",
+              "superFunction": 8867,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7120,
+                "name": "ParameterList",
+                "src": "1337:2:33"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 7129,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 7121,
+                        "name": "ElementaryTypeName",
+                        "src": "1363:7:33"
+                      }
+                    ],
+                    "id": 7122,
+                    "name": "VariableDeclaration",
+                    "src": "1363:7:33"
+                  }
+                ],
+                "id": 7123,
+                "name": "ParameterList",
+                "src": "1362:9:33"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_stringliteral_562e1db963abe78ea05112d9818dd22e06da9cf982ff3d9bfd86c0d5b3cead1f",
+                                  "typeString": "literal_string \"Should not use\""
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                12716,
+                                12717
+                              ],
+                              "referencedDeclaration": 12717,
+                              "type": "function (string memory) pure",
+                              "value": "revert"
+                            },
+                            "id": 7124,
+                            "name": "Identifier",
+                            "src": "1374:6:33"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "53686f756c64206e6f7420757365",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"Should not use\"",
+                              "value": "Should not use"
+                            },
+                            "id": 7125,
+                            "name": "Literal",
+                            "src": "1381:16:33"
+                          }
+                        ],
+                        "id": 7126,
+                        "name": "FunctionCall",
+                        "src": "1374:24:33"
+                      }
+                    ],
+                    "id": 7127,
+                    "name": "ExpressionStatement",
+                    "src": "1374:24:33"
+                  }
+                ],
+                "id": 7128,
+                "name": "Block",
+                "src": "1372:29:33"
+              }
+            ],
+            "id": 7129,
+            "name": "FunctionDefinition",
+            "src": "1324:77:33"
+          }
+        ],
+        "id": 7130,
+        "name": "ContractDefinition",
+        "src": "827:577:33"
+      }
+    ],
+    "id": 7131,
+    "name": "SourceUnit",
+    "src": "694:712:33"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.3",
+  "updatedAt": "2021-01-16T10:09:32.067Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
